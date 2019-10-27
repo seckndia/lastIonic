@@ -7,6 +7,8 @@ const routes: Routes = [
   { path: 'auth', loadChildren: './auth/auth/auth.module#AuthPageModule' },
   { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
   { path: 'transaction', loadChildren: './transaction/transaction.module#TransactionPageModule' },
+  { path: 'list', loadChildren: './list/list.module#ListPageModule' },
+  { path: 'detail', loadChildren: './detail/detail.module#DetailPageModule' },
 ];
 
 @NgModule({

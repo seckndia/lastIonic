@@ -14,6 +14,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpClientModule, HTTP_INTERCEPTORS  }  from '@angular/common/http';
 import { TransactionService} from './transaction/transaction.service';
 import { InterceptorService } from './interceptor.service';
+import { ListPageModule } from '../app/list/list.module';
 
 import { from } from 'rxjs';
 
@@ -22,7 +23,7 @@ import { from } from 'rxjs';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ListPageModule,
     HttpClientModule],
   providers: [
     StatusBar,

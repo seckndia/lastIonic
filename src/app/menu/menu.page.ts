@@ -14,7 +14,11 @@ public menus = [
   url: '/menu/home',
    icon: 'home'},
   {title: 'Déconnexion', url: '/auth', icon: 'log-out'},
-   {title: 'Transaction', url: '/menu/transaction', icon: 'swap'}
+   {title: 'Transaction', url: '/menu/transaction', icon: 'swap'},
+   {title: 'Liste Transactions', url: '/menu/list', icon: 'list'},
+
+
+
 ];
   constructor(private router: Router, private authService: AuthService) { }
 
@@ -27,4 +31,5 @@ onMenuAction(m) {
   }
   this.router.navigateByUrl(m.url);
 }
+
 }

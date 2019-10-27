@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-menu-button ></ion-menu-button>
+      </ion-buttons>
+    <ion-title>Liste des Transactions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="backForm">
+
+    <div class="ion-padding">
+        <ion-segment [(ngModel)]="relationship"  color="primary" >
+          <ion-segment-button id="choix1"  value="opération">
+            Opération
+          </ion-segment-button>
+          <ion-segment-button id="choix2"  value="Commission">
+            Commission
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+    <div class="formulaire general" [(ngSwitch)]="relationship">
+
+    <form  [formGroup]="detaitTransaction" *ngSwitchCase="'opération'" >
+
+     <ion-grid>
+       <ion-row>
+         <ion-col>
+           <ion-item class="form-group">
+         
+        <ion-label >Date Début</ion-label>
+        <ion-icon slot="start" name="calendar"></ion-icon>
+        <ion-datetime  formControlName="debut" displayFormat="MMM D, YYYY" type="date" useValueAsDate></ion-datetime>
+     
+      </ion-item>
+      </ion-col>
+      <ion-col>
+      <ion-item  class="form-group">
+        <ion-label>Date Fin</ion-label>
+        <!--ion-icon slot="start" name="calendar"></ion-icon-->
+
+        <ion-datetime formControlName="fin" displayFormat="MMM D, YYYY" type="date"  useValueAsDate ></ion-datetime>
+      </ion-item>
+    </ion-col>
+       </ion-row>
+      </ion-grid>
+       <div class="flex">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                  <ion-button expand="block" color="primary" shape="round" type="submit" (click)="listEnvoi()" >
+                      <ion-icon slot="start" name="send"></ion-icon>
+                      Envoie
+                    </ion-button>
+              </ion-col>
+              <ion-col>
+                  <ion-button expand="block" color="success" shape="round" type="submit" (click)="listRetrait()" >
+                      <ion-icon slot="start" name="checkmark-circle"></ion-icon>
+                      Retrait
+                    </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      
+          </div>
+
+    <div class="Recuperation" >
+    <ion-item *ngFor="let l of detailTs" (click)="goToView(l)" detail>
+      <ion-label><strong> Montant: {{l.montant}}</strong>
+        <br>Frais: {{l.tarif.valeur}} FCF
+      </ion-label>
+    </ion-item>
+
+   
+
+    </div>
+  </form>
+</div>
+</ion-content>

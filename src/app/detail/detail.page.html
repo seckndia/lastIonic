@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Details Transactions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+     <div>
+
+        <h1 style="color:blue;">Agence: {{detail.agence}} </h1>
+     <h2> <Strong>Montant: {{detail.montant}}</Strong></h2>
+           <h3 style="color:red;"> Status: {{detail.status}}</h3>
+
+          </div>
+          <div class="test">
+            <h2 style="text-decoration: underline; text-align:center; color:blue;">Bénéficiére</h2>
+            <h3>
+          
+              Prénom: {{detail.retrait.prenom}} <br>
+              Nom: {{detail.retrait.nom}} <br>
+              Tel: {{detail.retrait.tel}}
+            </h3>
+            
+          </div>
+          <div>
+              <h2 style="text-decoration: underline; text-align:center; color:blue;">Envoyeur</h2>
+              <h3>
+                Prénom: {{detail.envoie.prenomEnvoyeur}} <br>
+                Nom: {{detail.envoie.nomEnvoyeur}} <br>
+                Tel: {{detail.envoie.telEnvoyeur}}
+              </h3>
+              
+            </div>
+  
+  
+
+
+
+</ion-content>
